@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<title>Page Title</title>
+</head>
+<body>
+<canvas id="hdr"></canvas>
+<p id="demo"></p>
+<script>
+function get(url) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     return this.responseText;
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+document.querySelector("#l").value=window.innerWidth.toString();
+var w=window.innerWidth;
+var ctx = document.getElementById('hdr').getContext('2d');
+ctx.fillStyle = 'green';
+ctx.fillText(window.innerWidth,10,50);
+//ctx.fillRect(10, 10,  ,  document.body.clientHeight);
+console.log(window.innerWidth);
+get("https://www.w3schools.com/html/tryit.asp?filename=tryhtml_default");
+</script>
+
+</body>
+</html>
